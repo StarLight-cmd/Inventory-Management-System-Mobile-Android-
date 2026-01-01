@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base app theme -->
+    <style name="Theme.IMS" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize as needed -->
+    </style>
+
+    <!-- Splash theme -->
+    <style name="Theme.IMS.Splash" parent="Theme.SplashScreen">
+        <!-- Show your brand logo -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/fox_logo_inset</item>
+        <!-- Background color -->
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <!-- Duration (optional, set to 0 for no animation) -->
+        <item name="windowSplashScreenAnimationDuration">0</item>
+        <!-- After splash, use main app theme -->
+        <item name="postSplashScreenTheme">@style/Theme.IMS</item>
+    </style>
+
+</resources>

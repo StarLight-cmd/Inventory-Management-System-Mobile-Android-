@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- banner -->
+    <include
+        android:id="@+id/foxInventory_header_bar"
+        layout="@layout/fox_header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Components to record a sale -->
+    <EditText
+        android:id="@+id/etProductId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product ID"
+        android:inputType="number"
+        android:layout_below="@id/foxInventory_header_bar" />
+
+    <EditText
+        android:id="@+id/etQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Quantity"
+        android:inputType="number"
+        android:layout_below="@id/etProductId"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select Date Of Sale"
+        android:focusable="false"
+        android:clickable="true"
+        android:layout_below="@id/etQuantity"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnRecordSale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Record Sale"
+        android:backgroundTint="@color/orange"
+        android:layout_below="@id/etDate"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/etsaleId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sale ID"
+        android:inputType="number"
+        android:layout_below="@id/btnRecordSale"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnDeleteSale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Sale by ID"
+        android:layout_below="@id/etsaleId"
+        android:backgroundTint="@color/orange"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvSalesHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fox Inventory Management: Sales History Log"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingTop="12dp"
+        android:layout_below="@id/btnDeleteSale"
+        android:layout_marginTop="12dp" />
+
+    <!-- Sales records log -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSales"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvSalesHistory"
+        android:layout_above="@id/fox_bottom_nav"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false" />
+
+    <!-- progress indicator -->
+    <ProgressBar
+        android:id="@+id/pgSalesBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/orange"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <!-- bottom navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/fox_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>
